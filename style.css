@@ -248,6 +248,8 @@ header{
 }
 
 @media only screen and (max-width: 910px) {
+  
+  
   #icon {
     display: block;
     margin-right: 20px;
@@ -322,5 +324,14 @@ header{
 @media only screen and (min-width: 910px) {
   #menu {
     display: flex !important;
+  }
+}
+
+@media only screen and (max-height: 400px) {
+  #main {
+    min-height: 150vh;
+  }
+  #home-photo{
+    width: 50%;
   }
 }
