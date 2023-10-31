@@ -18,6 +18,7 @@ header{
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 500;
 }
 
 #title{
@@ -247,6 +248,90 @@ header{
   vertical-align: top;
 }
 
+.timeline {
+  position: relative;
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: hsl(0, 0%, 60%);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 100%;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: hsl(0, 0%, 60%);
+  border: 4px solid hsl(10, 100%, 50%);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.left {
+  left: -190px;
+  text-align: right;
+}
+
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid hsl(10, 0%, 20%);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent hsl(10, 0%, 20%);
+}
+
+.right {
+  left: 50%;
+}
+
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid hsl(0, 0%, 20%);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent hsl(0, 0%, 20%) transparent transparent;
+}
+
+.right::after {
+  left: -16px;
+}
+
+.timeline-content {
+  padding: 20px 30px;
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 80%);
+  position: relative;
+  border-radius: 15px;
+}
+
 @media only screen and (max-width: 910px) {
   
   
@@ -319,6 +404,37 @@ header{
   .hitory-card{
     width: 30%;
   }
+
+  .timeline{
+    padding-bottom: 30px;
+  }
+
+  .timeline::after {
+    left: 31px;
+  }
+  
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .container::before {
+    left: 60px;
+    border: medium solid hsl(0, 0%, 20%);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent hsl(0, 0%, 20%) transparent transparent;
+    }
+
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  .right, .left {
+    left: 0%;
+    text-align: left;
+    }
+
 }
 
 @media only screen and (min-width: 910px) {
