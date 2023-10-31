@@ -414,6 +414,10 @@ header{
     padding: 5px;
   }
 
+  #project-list{
+    width: 95%;
+  }
+
   .hitory-card{
     width: 30%;
   }
